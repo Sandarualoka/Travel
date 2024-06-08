@@ -1,0 +1,9 @@
+.carousel .slide {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .carousel .slide.selected {
+    opacity: 1;
+  }
+  
