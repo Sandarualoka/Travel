@@ -6,7 +6,7 @@ import Logo from "../../assets/logo-new-1.png";
 const ItemsCards = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
-    threshold: 0.1, // Adjust this value to control when the animation triggers
+    threshold: 0.3, // Adjust this value to control when the animation triggers
   });
 
   React.useEffect(() => {
@@ -26,7 +26,7 @@ const ItemsCards = () => {
   };
 
   return (
-    <div className="ml-6">
+    <div className="ml-6 overflow-x-hidden">
       <div className="flex justify-center">
         <p className="font-sans text-[24px] sm:text-[28px] md:text-[35px] font-semibold p-4 rounded-[30px] text-white text-center">
           Plan your Best tour with Sample Travel
