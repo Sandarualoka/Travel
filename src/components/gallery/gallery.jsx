@@ -22,33 +22,31 @@ const gridSquareVariants = {
   show: { opacity: 1 },
 };
 
-const top_rated = () => {
+const TopRated = () => {
   return (
-    <div className="ml-[10%]">
-      <div className=" flex flex-col overflow-x-hidden">
-        <motion.section
-          variants={gridContainerVariants}
-          initial="hidden"
-          animate="show"
-          className="grid grid-cols-3 p-10 gap-10"
-        >
-          {[Card1, Card2, Card3, Card4, Card5, Card6].map((card, index) => (
-            <motion.div
-              key={index}
-              variants={gridSquareVariants}
-              className="bg-slate-800 aspect-square rounded-lg justify-center flex items-center w-80 h-80"
-            >
-              <img
-                src={card}
-                alt={`card${index + 1}`}
-                className="object-cover w-full h-full rounded-lg"
-              />
-            </motion.div>
-          ))}
-        </motion.section>
-      </div>
+    <div className="ml-4 sm:ml-8 md:ml-[10%] overflow-x-hidden">
+      <motion.section
+        variants={gridContainerVariants}
+        initial="hidden"
+        animate="show"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-10 p-4 sm:p-6 md:p-10"
+      >
+        {[Card1, Card2, Card3, Card4, Card5, Card6].map((card, index) => (
+          <motion.div
+            key={index}
+            variants={gridSquareVariants}
+            className="bg-slate-800 aspect-square rounded-lg flex items-center justify-center w-full sm:w-80 h-80"
+          >
+            <img
+              src={card}
+              alt={`card${index + 1}`}
+              className="object-cover w-full h-full rounded-lg"
+            />
+          </motion.div>
+        ))}
+      </motion.section>
     </div>
   );
 };
 
-export default top_rated;
+export default TopRated;
