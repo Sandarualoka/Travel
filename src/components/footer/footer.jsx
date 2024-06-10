@@ -1,29 +1,17 @@
 import React from "react";
-import Sala_Global from "../../assets/sala-global-logo.png";
+import Logo from "../../assets/logo-new-1.png";
 
 const Footer = () => {
   return (
-    <div className="relative bg-black bg-opacity-50 p-5 rounded-t-[50px]">
+    <div className="relative bg-white  p-5 rounded-t-[50px]">
       {/* Background image with reduced opacity */}
-      <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `url(${Sala_Global})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      ></div>
 
       {/* Container for footer content */}
-      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between">
+      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between ">
         {/* Left side */}
         <div className="flex flex-col items-center lg:items-start lg:flex-row lg:ml-6">
           <div className="flex justify-center lg:justify-start">
-            <img
-              src={Sala_Global}
-              alt="sala-logo"
-              className="w-[100px] h-[100px]"
-            />
+            <img src={Logo} alt="sala-logo" className="w-[100px] h-[100px]" />
           </div>
           <div className="flex ml-5 mt-6 gap-4 lg:gap-10 ">
             <section className="flex justify-center items-center">
@@ -79,19 +67,19 @@ const Footer = () => {
               <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-300 font-bold">
                 FEATURED CATEGORIES
               </h3>
-              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer">
+              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer text-black">
                 Arts & Crafts
               </p>
-              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer">
+              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer text-black">
                 Food & Beverages
               </p>
-              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer">
+              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer text-black">
                 Gem & Jewelry
               </p>
-              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer">
+              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer text-black">
                 Cosmetics & Wellness Products
               </p>
-              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer">
+              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer text-black">
                 Fashion & Clothing
               </p>
             </div>
@@ -99,19 +87,19 @@ const Footer = () => {
               <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-300 font-bold">
                 QUICK LINKS
               </h3>
-              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer">
+              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer text-black">
                 CSR
               </p>
-              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer">
+              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointe text-black">
                 How to Buy
               </p>
-              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer">
+              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer text-black">
                 Gallery
               </p>
-              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer">
+              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer text-black">
                 About
               </p>
-              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer">
+              <p className="hover:text-gray-400 duration-300 hover:text-[20px] cursor-pointer text-black">
                 Contact
               </p>
             </div>

@@ -6,7 +6,7 @@ import Logo from "../../assets/logo-new-1.png";
 const ItemsCards = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
-    threshold: 0.3, // Adjust this value to control when the animation triggers
+    threshold: 0.1, // Adjust this value to control when the animation triggers
   });
 
   React.useEffect(() => {

@@ -20,16 +20,21 @@ const Products = () => {
   };
 
   return (
-    <div ref={ref} className="text-black font-sans mt-10">
-      <div className="bg-white p-4 w-[500px] h-[500px] rounded-r-[100px]">
-        <p className="text-[50px]">OUR PACKAGES</p>
+    <div
+      ref={ref}
+      className="text-black font-sans mt-10 overflow-x-hidden flex"
+    >
+      <div className="bg-white p-4 sm:p-6 md:p-8 lg:p-10 w-full max-w-lg h-auto rounded-r-[50px] md:rounded-r-[100px]">
+        <p className="text-[30px] sm:text-[40px] md:text-[50px]">
+          OUR PACKAGES
+        </p>
 
         <div className="flex justify-center items-center">
           <motion.p
             initial="hidden"
             animate={controls}
             variants={textVariants}
-            className="text-[18px] mt-10"
+            className="text-[14px] sm:text-[16px] md:text-[18px] mt-5 sm:mt-7 md:mt-10"
           >
             Explore Sri Lanka with our diverse tour packages, featuring cultural
             immersion, wildlife adventures, and idyllic beaches. Our
@@ -38,12 +43,12 @@ const Products = () => {
           </motion.p>
         </div>
 
-        <div className="mt-5">
+        <div className="mt-5 sm:mt-7 md:mt-10 flex justify-center">
           <motion.button
             initial="hidden"
             animate={controls}
             variants={textVariants}
-            className="bg-black text-white rounded-lg p-4"
+            className="bg-black text-white rounded-lg px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4"
           >
             Explore more
           </motion.button>
