@@ -3,22 +3,20 @@ import Contact from "../../assets/contact-us-new.png";
 import Hero from "../hero/hero";
 import "./animation.css";
 
-const contact = () => {
+const ContactForm = () => {
   return (
     <div>
-      <div>
-        <Hero />
-      </div>
-      <div className="flex flex-col items-center justify-center h-screen dark">
-        <div class="float">
+      <Hero />
+      <div className="flex flex-col items-center justify-center min-h-screen dark">
+        <div className="float mb-8">
           <img
             src={Contact}
             alt="contact-logo"
-            className="w-[200px] h-[200px]"
+            className="w-[150px] h-[150px] sm:w-[200px] sm:h-[200px]"
           />
         </div>
-        <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-6">
-          <h2 className="text-2xl font-bold text-gray-200 mb-4 flex justify-center">
+        <div className="w-full max-w-xs sm:max-w-md bg-gray-800 rounded-lg shadow-md p-6 mx-4">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-200 mb-4 flex justify-center">
             Find me Online
           </h2>
           <form className="flex flex-col">
@@ -54,4 +52,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default ContactForm;
