@@ -1,9 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import Contact from "../../assets/contact-us-new.png";
 import Hero from "../hero/hero";
 import "./animation.css";
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const serviceId = "service_dqfv2g4";
+    const templateId = "template_p0srpw6";
+    const publickey = "yXHcd6XiDNlmHtjyJ";
+
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      to_name: "Web Wizard",
+      message: message, // Fixed typo "meesage" to "message"
+    };
+
+    emailjs
+      .send(serviceId, templateId, templateParams, publickey)
+      .then((response) => {
+        console.log("Email Send Successfully", response);
+        setName("");
+        setEmail("");
+        setMessage("");
+      })
+      .catch((error) => {
+        console.log("Error sending email", error);
+      });
+  };
+
   return (
     <div>
       <Hero />
@@ -19,23 +51,27 @@ const ContactForm = () => {
           <h2 className="text-xl sm:text-2xl font-bold text-gray-200 mb-4 flex justify-center">
             Find me Online
           </h2>
-          <form className="flex flex-col">
+          <form className="flex flex-col" onSubmit={handleSubmit}>
             <input
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               placeholder="Full Name"
               className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
               type="text"
             />
             <input
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
               className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
               type="email"
             />
-            <input
-              placeholder="Phone number"
-              className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
-              type="text"
-            />
             <textarea
+              name="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               placeholder="Say hello"
               className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
             ></textarea>
