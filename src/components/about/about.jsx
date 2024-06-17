@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import "./about.css";
 import "animate.css";
@@ -9,12 +9,40 @@ import Cover4 from "../../assets/cover4.jpg";
 import Cover5 from "../../assets/cover5.jpg";
 import { Carousel } from "react-responsive-carousel";
 import Logo from "../../assets/logo-new-1.png";
+import Cover from "../../assets/train.jpg";
+import { TiUserAdd } from "react-icons/ti";
+import { MdTour } from "react-icons/md";
+import { MdOutlineSentimentSatisfiedAlt } from "react-icons/md";
+import myVideo from "../../assets/0617.mp4";
 
 const About = () => {
   const { ref: refSala, inView: inViewSala } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const [clients, setClients] = useState(0);
+  const [tours, setTours] = useState(0);
+  const [satisfaction, setSatisfaction] = useState(0);
+
+  useEffect(() => {
+    const incrementCount = (start, end, setter, duration) => {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        setter(Math.floor(progress * (end - start) + start));
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    };
+
+    incrementCount(0, 99, setClients, 2000);
+    incrementCount(0, 50, setTours, 2000);
+    incrementCount(0, 90.3, setSatisfaction, 2000);
+  }, []);
 
   return (
     <div className="mt-4 px-4">
@@ -96,7 +124,7 @@ const About = () => {
               inViewSala ? "animate__animated animate__backInUp" : ""
             } text-black p-6 sm:p-8 lg:p-12 font-bold text-center text-[35px] sm:text-[30px] md:text-[35px] lg:text-[55px] rounded-[20px] lg:rounded-[60px]`}
           >
-            <span>ABOUT </span> <br />
+            <span>ABOUT</span> <br />
             <span className="text-white font-sans">Travel sample</span>
           </p>
         </div>
@@ -104,7 +132,7 @@ const About = () => {
           <img
             src={Logo}
             alt="sala-logo"
-            className="w-full max-w-[480px] h-auto mx-auto lg:mx-0"
+            className="w-full max-w-[280px] h-auto lg:mx-0"
           />
         </div>
       </div>
@@ -137,6 +165,37 @@ const About = () => {
             Exercitationem quaerat eius accusamus animi sed explicabo cum
             ratione, quae voluptatem assumenda.
           </p>
+        </div>
+      </div>
+
+      {/* clients and service counter */}
+      <div className="relative">
+        {/* <img
+          src={Cover}
+          alt="cover"
+          className="h-[600px] w-full object-cover opacity-40"
+        /> */}
+        <video width="100%" height="360" autoPlay muted loop playsInline>
+          <source src={myVideo} type="video/mp4" />
+        </video>
+
+        {/* Absolute positioned text */}
+        <div className="absolute inset-0 grid grid-cols-3 grid-flow-col place-items-center gap-4 justify-center">
+          <div className="text-white text-[20px] font-bold text-4xl">
+            <TiUserAdd className="h-[80px] w-[80px]" />
+            <p>CLIENTS</p>
+            <p className="text-6xl">{clients}+</p>
+          </div>
+          <div className="text-white text-[20px] font-bold text-4xl">
+            <MdTour className="h-[80px] w-[80px]" />
+            <p>TOURS</p>
+            <p className="text-6xl">{tours}+</p>
+          </div>
+          <div className="text-white text-[20px] font-bold text-4xl">
+            <MdOutlineSentimentSatisfiedAlt className="h-[80px] w-[80px]" />
+            <p>SATISFACTION</p>
+            <p className="text-6xl">{satisfaction / 10}+</p>
+          </div>
         </div>
       </div>
     </div>

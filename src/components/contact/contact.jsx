@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Contact from "../../assets/contact-us-new.png";
 import Hero from "../hero/hero";
-import "./animation.css";
 import emailjs from "@emailjs/browser";
+import "./animation.css";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState(""); // State for success message
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ const ContactForm = () => {
 
     const templateParams = {
       from_name: name,
-      from_email: email, // Include from_email
+      from_email: email,
       to_name: "Sandaru",
       message: message,
     };
@@ -37,11 +37,11 @@ const ContactForm = () => {
         setName("");
         setEmail("");
         setMessage("");
-        setSuccessMessage("Message sent successfully!"); // Set success message
+        setSuccessMessage("Message sent successfully!");
       })
       .catch((error) => {
         console.log("Error sending email", error);
-        setSuccessMessage("Failed to send message. Please try again."); // Set error message
+        setSuccessMessage("Failed to send message. Please try again.");
       });
   };
 
