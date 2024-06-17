@@ -1,5 +1,4 @@
 import React from "react";
-import Sala from "../../assets/sala-logo.jpg";
 import { useInView } from "react-intersection-observer";
 import "./about.css";
 import "animate.css";
@@ -9,14 +8,10 @@ import Cover3 from "../../assets/Home_Image.jpg";
 import Cover4 from "../../assets/cover4.jpg";
 import Cover5 from "../../assets/cover5.jpg";
 import { Carousel } from "react-responsive-carousel";
+import Logo from "../../assets/logo-new-1.png";
 
 const About = () => {
   const { ref: refSala, inView: inViewSala } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const { ref: refText, inView: inViewText } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
@@ -107,25 +102,11 @@ const About = () => {
         </div>
         <div className="flex-1 mt-6 lg:mt-0">
           <img
-            src={Sala}
+            src={Logo}
             alt="sala-logo"
             className="w-full max-w-[480px] h-auto mx-auto lg:mx-0"
           />
         </div>
-      </div>
-
-      <div className=" bg-gray-100 p-2 rounded-lg mt-8 lg:mt-12 px-4 sm:px-8 lg:px-16 xl:px-32">
-        <p
-          ref={refText}
-          className={`${
-            inViewText ? "animate__animated animate__lightSpeedInRight" : ""
-          } font-bold text-[16px] sm:text-[18px] md:text-[20px] lg:text-[25px] text-center`}
-        >
-          SALA Enterprises was established in 1992 with the initial electronic
-          dictionaries offered to the market. After being in business for 30
-          years, today SALA is one of the leading IT providers to the entire
-          nation with more than 500 appointed agents island-wide.
-        </p>
       </div>
 
       <div className="flex flex-col lg:flex-row justify-center items-center gap-4 lg:gap-8 mb-8 mt-8">
@@ -138,11 +119,8 @@ const About = () => {
             </span>
           </p>
           <p className="text-sm text-white font-semibold text-center mt-2">
-            “To create an awareness in the International Market on the skills,
-            creativity and capabilities of the Local Artisans and their unique
-            products, created by using local raw-material. To partner with the
-            Artisans to help them through their talents, develop livelihood in
-            order to achieve higher standards.”
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
+            distinctio?
           </p>
         </div>
 
@@ -155,9 +133,9 @@ const About = () => {
             </span>
           </p>
           <p className="text-sm text-white font-semibold text-center mt-2">
-            “LAKSALA to be the International Market Leader in handicrafts and
-            other household items through the Franchise Partnership with SALA
-            Global.”
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Exercitationem quaerat eius accusamus animi sed explicabo cum
+            ratione, quae voluptatem assumenda.
           </p>
         </div>
       </div>

@@ -13,21 +13,27 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Validation check
+    if (!name || !email || !message) {
+      setSuccessMessage("All fields must be filled.");
+      return;
+    }
+
     const serviceId = "service_dqfv2g4";
     const templateId = "template_p0srpw6";
     const publickey = "yXHcd6XiDNlmHtjyJ";
 
     const templateParams = {
       from_name: name,
-      from_email: email,
+      from_email: email, // Include from_email
       to_name: "Sandaru",
-      message: message, // Fixed typo "meesage" to "message"
+      message: message,
     };
 
     emailjs
       .send(serviceId, templateId, templateParams, publickey)
       .then((response) => {
-        console.log("Email Send Successfully", response);
+        console.log("Email sent successfully", response);
         setName("");
         setEmail("");
         setMessage("");
@@ -60,7 +66,7 @@ const ContactForm = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Full Name"
-              className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 "
               type="text"
             />
             <input
@@ -68,7 +74,7 @@ const ContactForm = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
-              className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1"
               type="email"
             />
             <textarea
@@ -76,16 +82,16 @@ const ContactForm = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Say hello"
-              className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1"
             ></textarea>
             <button
-              className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
+              className="bg-gradient-to-r  text-black bg-white font-bold py-2 px-4 rounded-md mt-4"
               type="submit"
             >
               Send
             </button>
           </form>
-          {successMessage && ( // Conditionally render success message
+          {successMessage && (
             <div className="mt-4 text-gray-200">{successMessage}</div>
           )}
         </div>
