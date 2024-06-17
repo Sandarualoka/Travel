@@ -26,7 +26,7 @@ const ItemsCards = () => {
   };
 
   return (
-    <div className="ml-6 overflow-x-hidden">
+    <div className="ml-6 overflow-x-hidden overflow-y-hidden">
       <div className="flex justify-center">
         <p className="font-sans text-[24px] sm:text-[28px] md:text-[35px] font-semibold p-4 rounded-[30px] text-white text-center">
           Plan your Best tour with Sample Travel

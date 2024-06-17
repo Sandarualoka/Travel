@@ -1,15 +1,16 @@
 import React from "react";
-import Hero_Logo from "../../assets/logo-hero.png";
 import Sala from "../../assets/sala-logo.jpg";
 import { useInView } from "react-intersection-observer";
+import "./about.css";
 import "animate.css";
+import Cover1 from "../../assets/island.jpg";
+import Cover2 from "../../assets/tree.jpg";
+import Cover3 from "../../assets/Home_Image.jpg";
+import Cover4 from "../../assets/cover4.jpg";
+import Cover5 from "../../assets/cover5.jpg";
+import { Carousel } from "react-responsive-carousel";
 
 const About = () => {
-  const { ref: refLaksala, inView: inViewLaksala } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   const { ref: refSala, inView: inViewSala } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -22,39 +23,72 @@ const About = () => {
 
   return (
     <div className="mt-4 px-4">
-      <div className="bg-black w-full max-w-[1450px] h-auto lg:h-[437px] mx-auto rounded-[20px] lg:rounded-[108px] p-4 lg:p-0">
-        <div className="flex flex-col lg:flex-row lg:gap-[500px] items-center">
-          {/* section for text */}
-          <div className="text-center lg:text-left lg:ml-[70px]">
-            <p
-              ref={refLaksala}
-              className={`${
-                inViewLaksala ? "animate__animated animate__backInUp" : ""
-              } text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-300 text-[24px] sm:text-[30px] lg:text-[40px] font-bold mt-[20px] lg:mt-[60px] mb-5`}
+      <div>
+        <div className="mt-4 px-4">
+          <div className="relative overflow-x-hidden">
+            <Carousel
+              showThumbs={false}
+              showStatus={false}
+              infiniteLoop
+              autoPlay
+              interval={5000}
+              transitionTime={800}
+              className="rounded-b-[50px] lg:rounded-b-[100px]"
             >
-              ABOUT LAKSALA
-            </p>
+              <div>
+                <img
+                  src={Cover1}
+                  alt="cover1"
+                  className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] object-cover rounded-b-[60px] fade"
+                />
+              </div>
+              <div>
+                <img
+                  src={Cover2}
+                  alt="cover2"
+                  className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] object-cover rounded-b-[60px] fade"
+                />
+              </div>
+              <div>
+                <img
+                  src={Cover3}
+                  alt="cover3"
+                  className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] object-cover rounded-b-[60px] fade"
+                />
+              </div>
 
-            <div className="mt-[20px] mx-auto lg:ml-0">
-              <p className="text-white text-[14px] sm:text-[16px] lg:text-[18px] font-semibold">
-                The platform to make your purchase for Authentic <br />
-                <span className="text-[40px]">Sri Lankan Products.</span>
-              </p>
+              <div>
+                <img
+                  src={Cover4}
+                  alt="cover4"
+                  className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] object-cover rounded-b-[60px] fade"
+                />
+              </div>
+
+              <div>
+                <img
+                  src={Cover5}
+                  alt="cover5"
+                  className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] object-cover rounded-b-[60px] fade"
+                />
+              </div>
+            </Carousel>
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-black bg-opacity-60 rounded-b-[50px] lg:rounded-b-[60px]"></div>
+            <div className="absolute inset-0 flex flex-col items-center lg:items-start lg:gap-8 p-4 lg:p-10 justify-center">
+              {/* section for text */}
+              <div className="text-center lg:text-left p-4">
+                <div className="mt-[10px]">
+                  <p className="text-white text-[16px] sm:text-[20px] lg:text-[18px] font-semibold mt-10">
+                    Make Your Trip Easier with Us
+                    <br />
+                    <span className="text-[24px] sm:text-[30px] md:text-[40px]">
+                      Discover Our Journey , The Story Behind Travel Sample
+                    </span>
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="mt-3 mx-auto lg:ml-0">
-              <button class="bg-yellow-950 text-yellow-400 border border-yellow-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-[40px] hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
-                <span class="bg-yellow-400 shadow-yellow-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
-                EXPLORE NOW
-              </button>
-            </div>
-          </div>
-          {/* section for flag */}
-          <div className="mt-10 lg:mt-10">
-            <img
-              src={Hero_Logo}
-              alt="flag"
-              className="w-[150px] sm:w-[200px] lg:w-auto mx-auto lg:mx-0"
-            />
           </div>
         </div>
       </div>
@@ -68,9 +102,7 @@ const About = () => {
             } text-black p-6 sm:p-8 lg:p-12 font-bold text-center text-[35px] sm:text-[30px] md:text-[35px] lg:text-[55px] rounded-[20px] lg:rounded-[60px]`}
           >
             <span>ABOUT </span> <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-300">
-              SALA GROUP
-            </span>
+            <span className="text-white font-sans">Travel sample</span>
           </p>
         </div>
         <div className="flex-1 mt-6 lg:mt-0">
