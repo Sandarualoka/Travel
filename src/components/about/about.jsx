@@ -9,11 +9,10 @@ import Cover4 from "../../assets/cover4.jpg";
 import Cover5 from "../../assets/cover5.jpg";
 import { Carousel } from "react-responsive-carousel";
 import Logo from "../../assets/logo-new-1.png";
-import Cover from "../../assets/train.jpg";
+import myVideo from "../../assets/0617.mp4";
 import { TiUserAdd } from "react-icons/ti";
 import { MdTour } from "react-icons/md";
 import { MdOutlineSentimentSatisfiedAlt } from "react-icons/md";
-import myVideo from "../../assets/0617.mp4";
 
 const About = () => {
   const { ref: refSala, inView: inViewSala } = useInView({
@@ -48,7 +47,7 @@ const About = () => {
     <div className="mt-4 px-4">
       <div>
         <div className="mt-4 px-4">
-          <div className="relative overflow-x-hidden">
+          <div className="relative overflow-hidden">
             <Carousel
               showThumbs={false}
               showStatus={false}
@@ -62,37 +61,35 @@ const About = () => {
                 <img
                   src={Cover1}
                   alt="cover1"
-                  className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] object-cover rounded-b-[60px] fade"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-b-[60px]"
                 />
               </div>
               <div>
                 <img
                   src={Cover2}
                   alt="cover2"
-                  className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] object-cover rounded-b-[60px] fade"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-b-[60px]"
                 />
               </div>
               <div>
                 <img
                   src={Cover3}
                   alt="cover3"
-                  className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] object-cover rounded-b-[60px] fade"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-b-[60px]"
                 />
               </div>
-
               <div>
                 <img
                   src={Cover4}
                   alt="cover4"
-                  className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] object-cover rounded-b-[60px] fade"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-b-[60px]"
                 />
               </div>
-
               <div>
                 <img
                   src={Cover5}
                   alt="cover5"
-                  className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] object-cover rounded-b-[60px] fade"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-b-[60px]"
                 />
               </div>
             </Carousel>
@@ -128,11 +125,11 @@ const About = () => {
             <span className="text-white font-sans">Travel sample</span>
           </p>
         </div>
-        <div className="flex-1 mt-6 lg:mt-0">
+        <div className="flex-1 mt-6 lg:mt-0 flex justify-center">
           <img
             src={Logo}
             alt="sala-logo"
-            className="w-full max-w-[280px] h-auto lg:mx-0"
+            className="w-full max-w-[200px] h-auto lg:mx-0"
           />
         </div>
       </div>
@@ -140,9 +137,9 @@ const About = () => {
       <div className="flex flex-col lg:flex-row justify-center items-center gap-4 lg:gap-8 mb-8 mt-8">
         {/* mission */}
         <div className="bg-black/75 w-full lg:w-[550px] p-5 rounded-[20px]">
-          <p className="text-white font-bold text-[30px] sm:text-[35px] md:text-[40px] text-center">
+          <p className="text-white font-bold text-[24px] sm:text-[30px] md:text-[35px] lg:text-[40px] text-center">
             OUR{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-300 text-[40px] sm:text-[45px] md:text-[50px]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-300">
               MISSION
             </span>
           </p>
@@ -153,10 +150,10 @@ const About = () => {
         </div>
 
         {/* vision */}
-        <div className="bg-black/75 h-[200px] w-full lg:w-[550px] p-5 rounded-[20px] ">
-          <p className="text-white font-bold text-[30px] sm:text-[35px] md:text-[40px] text-center">
+        <div className="bg-black/75 w-full lg:w-[550px] p-5 rounded-[20px]">
+          <p className="text-white font-bold text-[24px] sm:text-[30px] md:text-[35px] lg:text-[40px] text-center">
             OUR{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-300 text-[40px] sm:text-[45px] md:text-[50px]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-300">
               VISION
             </span>
           </p>
@@ -170,31 +167,48 @@ const About = () => {
 
       {/* clients and service counter */}
       <div className="relative">
-        {/* <img
-          src={Cover}
-          alt="cover"
-          className="h-[600px] w-full object-cover opacity-40"
-        /> */}
-        <video width="100%" height="360" autoPlay muted loop playsInline>
+        <video
+          className="w-full h-auto max-h-[600px] object-cover bg-black opacity-60"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
           <source src={myVideo} type="video/mp4" />
         </video>
 
         {/* Absolute positioned text */}
-        <div className="absolute inset-0 grid grid-cols-3 grid-flow-col place-items-center gap-4 justify-center">
-          <div className="text-white text-[20px] font-bold text-4xl">
-            <TiUserAdd className="h-[80px] w-[80px]" />
-            <p>CLIENTS</p>
-            <p className="text-6xl">{clients}+</p>
+        <div className="absolute inset-0 flex flex-col sm:flex-row justify-center items-center gap-4 lg:gap-8 p-4">
+          <div className="text-white text-center p-4">
+            <div className="flex flex-col items-center gap-2">
+              <TiUserAdd className="h-[40px] w-[40px] sm:h-[60px] sm:w-[60px] lg:h-[80px] lg:w-[80px]" />
+              <p className="text-[16px] sm:text-[20px] lg:text-[24px]">
+                CLIENTS
+              </p>
+              <p className="text-[24px] sm:text-[36px] lg:text-[48px]">
+                {clients}+
+              </p>
+            </div>
           </div>
-          <div className="text-white text-[20px] font-bold text-4xl">
-            <MdTour className="h-[80px] w-[80px]" />
-            <p>TOURS</p>
-            <p className="text-6xl">{tours}+</p>
+          <div className="text-white text-center p-4">
+            <div className="flex flex-col items-center gap-2">
+              <MdTour className="h-[40px] w-[40px] sm:h-[60px] sm:w-[60px] lg:h-[80px] lg:w-[80px]" />
+              <p className="text-[16px] sm:text-[20px] lg:text-[24px]">TOURS</p>
+              <p className="text-[24px] sm:text-[36px] lg:text-[48px]">
+                {tours}+
+              </p>
+            </div>
           </div>
-          <div className="text-white text-[20px] font-bold text-4xl">
-            <MdOutlineSentimentSatisfiedAlt className="h-[80px] w-[80px]" />
-            <p>SATISFACTION</p>
-            <p className="text-6xl">{satisfaction / 10}+</p>
+          <div className="text-white text-center p-4">
+            <div className="flex flex-col items-center gap-2">
+              <MdOutlineSentimentSatisfiedAlt className="h-[40px] w-[40px] sm:h-[60px] sm:w-[60px] lg:h-[80px] lg:w-[80px]" />
+              <p className="text-[16px] sm:text-[20px] lg:text-[24px]">
+                SATISFACTION
+              </p>
+              <p className="text-[24px] sm:text-[36px] lg:text-[48px]">
+                {satisfaction / 10}+
+              </p>
+            </div>
           </div>
         </div>
       </div>

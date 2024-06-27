@@ -25,10 +25,9 @@ const Products = () => {
       className="text-black font-sans mt-10 overflow-x-hidden flex"
     >
       <div className="bg-white p-4 sm:p-6 md:p-8 lg:p-10 w-full max-w-lg h-auto rounded-r-[50px] md:rounded-r-[100px]">
-        <p className="text-[30px] sm:text-[40px] md:text-[50px]">
-          OUR PACKAGES
+        <p className="text-[36px] sm:text-[40px] md:text-[50px] font-bold font-sans">
+          Our Packages
         </p>
-
         <div className="flex justify-center items-center">
           <motion.p
             initial="hidden"

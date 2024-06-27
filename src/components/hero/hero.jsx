@@ -61,7 +61,7 @@ const Hero = () => {
           </div>
         </Carousel>
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-60 rounded-b-[50px] lg:rounded-b-[60px]"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-60 "></div>
         <div className="absolute inset-0 flex flex-col items-center lg:items-start lg:gap-8 p-4 lg:p-10 justify-center">
           {/* section for text */}
           <div className="text-center lg:text-left p-4">

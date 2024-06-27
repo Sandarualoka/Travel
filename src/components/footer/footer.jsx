@@ -3,7 +3,7 @@ import Logo from "../../assets/logo-new-1.png";
 
 const Footer = () => {
   return (
-    <div className="relative bg-white  p-5 rounded-t-[50px]">
+    <div className="relative bg-white  p-5 ">
       {/* Background image with reduced opacity */}
 
       {/* Container for footer content */}
